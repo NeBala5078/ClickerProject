@@ -1,0 +1,119 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    font-size: 3rem;
+    font-family: monospace;
+    color:rgba(125,249,245,1);
+}
+
+body {
+    min-width: 510px;
+    margin:18px;
+    background: linear-gradient(0deg, rgba(125,249,245,1) 0%, rgba(135,134,134,1) 70%, rgba(38,28,14,1) 100%);
+}
+
+.inventory-container {
+    min-width: 540px;
+    margin:0 20px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.inventory-container.perclick {
+    grid-area: perclick;
+}
+
+.inventory-container.persec {
+    grid-area: persec;
+}
+
+.skill-table, .business-table {
+    width:100%;
+}
+
+.upgrade-stats-cell {
+    width:64px;
+}
+
+.upgrade-icon-cell {
+    width: 110px;
+    padding:5px; 
+}
+
+.clicking-area-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    grid-area: cog;
+}
+
+.upgrade-icon-cell img{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    border:5px solid black;
+    opacity: 0.7;
+    user-select: none;
+
+}
+
+.upgrade-icon-cell img:hover {
+    opacity:1;
+    transform: scale(1.1);
+    cursor: pointer;
+} 
+
+.clicker {
+    width:300px;
+    height:auto;
+    animation: myanimation 1s infinite linear;
+    user-select: none;
+    cursor: pointer;
+}
+
+p {
+    user-select: none;
+}
+
+@keyframes myanimation{
+   0%{transform:rotate(-10deg)}
+   50%{transform:rotate(10deg)}
+   100%{transform:rotate(-10deg)}
+}
+
+@media screen and (max-width: 1400px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "cog cog"
+            "perclick persec";
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "cog"
+            "perclick"
+            "persec";
+    }
+    }
+
+@media screen and (max-width: 576px) {
+    
+}
